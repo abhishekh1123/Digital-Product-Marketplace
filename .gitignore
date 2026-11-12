@@ -1,0 +1,87 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+AUTHORS
+ChangeLog
+
+# Virtual environments & Tox
+.venv/
+venv/
+ENV/
+.tox/
+
+# Unit test / coverage reports
+.testrepository/
+.stestr/
+htmlcov/
+.coverage
+.coverage.*
+cover/
+coverage.xml
+nosetests.xml
+*.cover
+.pytest_cache/
+pep8.txt
+pylint.txt
+
+# Documentation & Release Notes (Reno)
+doc/build/
+doc/source/api/
+doc/source/modules.rst
+api-ref/build/
+releasenotes/build/
+
+# Translations
+*.mo
+*.pot
+
+# OpenStack Credentials, Configs & Images
+openrc
+*-openrc.sh
+openstack.env
+clouds.yaml
+*.pem
+*.key
+*.qcow2
+*.img
+*.sqlite3
+*.db
+*.log
+
+# Ansible / Terraform / DevStack (if deploying)
+*.retry
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+local.conf
+
+# OS & Editor temporary files
+.DS_Store
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+.project
+.pydevproject
