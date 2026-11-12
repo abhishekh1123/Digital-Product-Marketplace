@@ -5,6 +5,7 @@ import { ZodError } from 'zod';
 import { config } from './config.js';
 
 import accountRouter from './routes/account.js';
+import { ensureBucket } from './services/storage.js';
 
 const app = express();
 
@@ -54,6 +55,12 @@ app.use((err, _req, res, _next) => {
     error: 'Something went wrong on our side. Try again in a moment.'
   });
 });
+
+try {
+  await ensureBucket();
+} catch (err) {
+  console.warn(`⚠ Could not verify storage bucket "${config.s3.bucket}": ${err.message}`);
+}
 
 // Start server
 app.listen(config.port, () => {
