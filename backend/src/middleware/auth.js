@@ -1,6 +1,6 @@
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 import { config } from '../config.js';
-import { query } from '../db/index.js';
+import { query } from '../db/pool.js';
 
 const JWKS = createRemoteJWKSet(
   new URL(`${config.neonAuthUrl}/.well-known/jwks.json`)
