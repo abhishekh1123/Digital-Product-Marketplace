@@ -4,12 +4,15 @@ import multer from 'multer';
 import { ZodError } from 'zod';
 import { config } from './config.js';
 
+import accountRouter from './routes/account.js';
+
 const app = express();
 
 app.use(cors({ origin: config.clientOrigin, credentials: true }));
 app.use(express.json({ limit: '1mb' }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
+app.use('/api', accountRouter);
 
 app.use('/api', (_req, res) =>
   res.status(404).json({ error: 'Not found.' })
