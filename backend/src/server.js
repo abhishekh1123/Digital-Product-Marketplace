@@ -6,6 +6,7 @@ import { config } from './config.js';
 
 import accountRouter from './routes/account.js';
 import { ensureBucket } from './services/storage.js';
+import catalogRoutes from './routes/catalog.js';
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json({ limit: '1mb' }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 app.use('/api', accountRouter);
+app.use('/api', catalogRoutes);
 
 app.use('/api', (_req, res) =>
   res.status(404).json({ error: 'Not found.' })
